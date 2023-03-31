@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react'
 import './Video.css'
 import VideoFooter from './components/footer/VideoFooter'
 
-function Video() {
+function VideoAnother() {
 
     const videoRef = useRef(null)
     const [play, setPlay] = useState(false)
@@ -26,7 +26,7 @@ function Video() {
                 ref={videoRef}
                 onClick={handleStart}
                 loop
-                src='https://firebasestorage.googleapis.com/v0/b/repository-of-things.appspot.com/o/tiktok-clone%20files%2Ftiktok-brasil.mp4?alt=media&token=71f67af5-3e50-40ee-a39d-7a740cd03a01'>
+                src='https://firebasestorage.googleapis.com/v0/b/repository-of-things.appspot.com/o/tiktok-clone%20files%2Ftiktok-perry.mp4?alt=media&token=646314af-8199-4c38-8782-0df4b40f68f5'>
             </video>
 
                 {/* Sidebar */}
@@ -37,4 +37,4 @@ function Video() {
     )
 }
 
-export default Video
+export default VideoAnother
