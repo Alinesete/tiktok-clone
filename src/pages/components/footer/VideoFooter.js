@@ -2,17 +2,17 @@ import React from 'react'
 import './VideoFooter.css'
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
-function VideoFooter() {
+function VideoFooter({user, desc, music}) {
   return (
     <div className='video_footer'>
         <div className='video_footer_text'>
-            <h3>@sevenaria</h3>
-            <p> Descrição do video</p>
+            <h3>{user}</h3>
+            <p>{desc}</p>
 
             <div className='video_footer_music'>
                 <MusicNoteIcon className='video_footer_music_icon' />
                 <div className='video_footer_music_title'>
-                    <p>Hatsune Miku - World is Mine</p>
+                    <p>{music}</p>
                 </div>
 
             </div>

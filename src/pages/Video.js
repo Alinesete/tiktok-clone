@@ -1,8 +1,9 @@
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 import './Video.css'
 import VideoFooter from './components/footer/VideoFooter'
+import VideoSidebar from './components/sidebar/VideoSidebar'
 
-function Video() {
+function Video({user, desc, music, url, likes, comments, shares}) {
 
     const videoRef = useRef(null)
     const [play, setPlay] = useState(false)
@@ -21,18 +22,18 @@ function Video() {
 
     return (
         <div className='video'>
-
             <video className='video_player'
                 ref={videoRef}
                 onClick={handleStart}
                 loop
-                src='https://firebasestorage.googleapis.com/v0/b/repository-of-things.appspot.com/o/tiktok-clone%20files%2Ftiktok-brasil.mp4?alt=media&token=71f67af5-3e50-40ee-a39d-7a740cd03a01'>
+                src={url}>
             </video>
 
-                {/* Sidebar */}
+            {/* Sidebar */}
+            <VideoSidebar likes={likes} comments={comments} shares={shares}/>
+            {/* Footer */}
+            <VideoFooter user={user} desc={desc} music={music}/>
 
-                {/* Footer */}
-            <VideoFooter />
         </div>
     )
 }
