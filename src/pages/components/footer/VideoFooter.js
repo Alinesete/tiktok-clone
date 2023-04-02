@@ -20,7 +20,7 @@ function VideoFooter({user, desc, music}) {
         <img 
         className='video_footer_record'
         alt='Imagem disco de vinil girando'
-        src='https://firebasestorage.googleapis.com/v0/b/repository-of-things.appspot.com/o/tiktok-clone%20files%2Fvinil.png?alt=media&token=653f1649-19b7-4a28-bae0-5d49d833311b'
+        src='https://firebasestorage.googleapis.com/v0/b/repository-of-things.appspot.com/o/titkok-clone%2Fvinil.png?alt=media&token=d8bd16a6-ec4c-47ae-9e0a-1d04abd47899'
         />
     </div>
   );
