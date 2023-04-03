@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './Video.css'
+import { debounce } from '@mui/material'
 import VideoFooter from './components/footer/VideoFooter'
 import VideoSidebar from './components/sidebar/VideoSidebar'
 
@@ -19,6 +20,23 @@ function Video({user, desc, music, url, likes, comments, shares}) {
         }
 
     }
+
+    useEffect(() => {
+        const handleScrollDebounced = debounce(() => {
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0; // Define o tempo de reprodução para 0 segundos
+            videoRef.current.pause(); // Pausa a reprodução do vídeo
+          }
+        }, 800);
+      
+        window.addEventListener("keydown", handleScrollDebounced);
+        window.addEventListener("wheel", handleScrollDebounced); // Adiciona o ouvinte de evento para o evento "keydown"
+      
+        return () => {
+          window.removeEventListener("keydown", handleScrollDebounced);
+          window.addEventListener("wheel", handleScrollDebounced); // Remove o ouvinte de evento quando o componente é desmontado
+        };
+      }, []);
 
     return (
         <div className='video'>
